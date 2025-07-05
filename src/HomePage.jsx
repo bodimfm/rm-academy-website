@@ -200,13 +200,13 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
               <img 
                 src="/logo-rmacademy.png" 
                 alt="RM Academy" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
 
