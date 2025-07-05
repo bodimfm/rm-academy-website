@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'media', // 'media' detecta automaticamente a preferência do sistema
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",

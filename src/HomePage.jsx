@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LogoAdaptive from "./components/LogoAdaptive";
 import { Card, CardHeader, CardContent, CardFooter } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -195,33 +196,29 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-black">
       
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+      <nav className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-              <img 
-                src="/logo-rmacademy.png" 
-                alt="RM Academy" 
-                className="h-16 w-auto"
-              />
+              <LogoAdaptive />
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#cursos" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <a href="#cursos" className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
                 Cursos
               </a>
-              <a href="#sobre" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <a href="#sobre" className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
                 Sobre
               </a>
-              <a href="#depoimentos" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <a href="#depoimentos" className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
                 Depoimentos
               </a>
-              <a href="#contato" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <a href="#contato" className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
                 Contato
               </a>
               <Button 
@@ -236,7 +233,7 @@ export default function HomePage() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -250,19 +247,19 @@ export default function HomePage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-100"
+              className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800"
             >
               <div className="px-4 py-4 space-y-3">
-                <a href="#cursos" className="block text-gray-700 hover:text-blue-600 font-medium">
+                <a href="#cursos" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">
                   Cursos
                 </a>
-                <a href="#sobre" className="block text-gray-700 hover:text-blue-600 font-medium">
+                <a href="#sobre" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">
                   Sobre
                 </a>
-                <a href="#depoimentos" className="block text-gray-700 hover:text-blue-600 font-medium">
+                <a href="#depoimentos" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">
                   Depoimentos
                 </a>
-                <a href="#contato" className="block text-gray-700 hover:text-blue-600 font-medium">
+                <a href="#contato" className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">
                   Contato
                 </a>
                 <Button 
@@ -295,7 +292,7 @@ export default function HomePage() {
                   Treinamentos Corporativos Premium
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Cursos especializados em IA, Gestão de Processos, Segurança da Informação e Finanças. 
                 Metodologia prática com resultados mensuráveis.
               </p>
@@ -414,7 +411,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
@@ -423,7 +420,7 @@ export default function HomePage() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Profissionais Treinados</div>
+              <div className="text-gray-600 dark:text-gray-300">Profissionais Treinados</div>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
@@ -432,7 +429,7 @@ export default function HomePage() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
-              <div className="text-gray-600">Taxa de Satisfação</div>
+              <div className="text-gray-600 dark:text-gray-300">Taxa de Satisfação</div>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
@@ -441,7 +438,7 @@ export default function HomePage() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">25</div>
-              <div className="text-gray-600">Máximo por Turma</div>
+              <div className="text-gray-600 dark:text-gray-300">Máximo por Turma</div>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
@@ -450,24 +447,24 @@ export default function HomePage() {
               className="text-center"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">4</div>
-              <div className="text-gray-600">Áreas de Expertise</div>
+              <div className="text-gray-600 dark:text-gray-300">Áreas de Expertise</div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Online Courses Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Cursos Online
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Aprenda no seu ritmo com nossos cursos 100% online
             </p>
           </motion.div>
@@ -481,21 +478,21 @@ export default function HomePage() {
                 transition={{ delay: idx * 0.1 }}
               >
                 <Card 
-                  className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                  className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group"
                   onClick={() => window.open(course.link, '_blank')}
                 >
                   <div className={`h-2 bg-gradient-to-r ${course.color}`}></div>
                   <CardHeader>
-                    <span className="text-sm font-semibold text-gray-600">{course.category}</span>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <span className="text-sm font-semibold text-gray-600 dark:text-gray-400">{course.category}</span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {course.title}
                     </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{course.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{course.description}</p>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center text-sm text-gray-500">
+                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                           <Clock className="w-4 h-4 mr-2" />
                           {course.duration}
                         </div>
@@ -527,7 +524,7 @@ export default function HomePage() {
               onClick={() => window.open('https://rmacademy.io/todos-os-cursos/', '_blank')}
               size="lg"
               variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950"
             >
               Ver Todos os Cursos Online
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -537,17 +534,17 @@ export default function HomePage() {
       </section>
 
       {/* All Courses Section */}
-      <section id="cursos" className="py-20">
+      <section id="cursos" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Nossos Cursos In Company
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Treinamentos personalizados para as necessidades da sua empresa
             </p>
           </motion.div>
@@ -561,18 +558,18 @@ export default function HomePage() {
                 transition={{ delay: idx * 0.1 }}
               >
                 <Card 
-                  className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                  className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group"
                   onClick={() => handleCourseClick(course.id)}
                 >
                   <div className={`h-2 bg-gradient-to-r ${course.color}`}></div>
                   <CardHeader>
-                    <span className="text-sm font-semibold text-gray-600">{course.category}</span>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <span className="text-sm font-semibold text-gray-600 dark:text-gray-400">{course.category}</span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {course.title}
                     </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{course.subtitle}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{course.subtitle}</p>
                     <div className="space-y-2">
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="w-4 h-4 mr-2" />
@@ -600,14 +597,14 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="depoimentos" className="py-20 bg-gray-50">
+      <section id="depoimentos" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               O que dizem nossos alunos
             </h2>
             <p className="text-xl text-gray-600">
@@ -623,17 +620,17 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card className="h-full">
+                <Card className="h-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 italic">"{testimonial.text}"</p>
                     <div className="border-t pt-4">
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
                       <p className="text-sm text-gray-500">{testimonial.company}</p>
                     </div>
                   </CardContent>
@@ -688,11 +685,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Logo and Description */}
             <div className="lg:col-span-2">
-              <img 
-                src="/logo-rmacademy.png" 
-                alt="RM Academy" 
-                className="h-12 w-auto mb-6"
-              />
+              <LogoAdaptive className="h-12 w-auto mb-6" />
               <p className="text-gray-400 mb-6 max-w-sm">
                 Transformando profissionais e empresas através de conhecimento especializado em tecnologia, privacidade e gestão.
               </p>

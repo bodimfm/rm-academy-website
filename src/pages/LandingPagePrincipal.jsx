@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle, BookOpen, Users, Award, Clock } from 'lucide-react'
 import { crmFunctions } from '../config/supabase'
+import LogoAdaptive from '../components/LogoAdaptive'
 
 const LandingPagePrincipal = () => {
   const [formData, setFormData] = useState({
@@ -22,14 +23,16 @@ const LandingPagePrincipal = () => {
 
     try {
       // Criar lead no CRM
-      await crmFunctions.criarLead(formData)
+      const novoCliente = await crmFunctions.criarLead(formData)
       
-      // Registrar interação
-      await crmFunctions.registrarInteracao(
-        null, // ID será criado automaticamente
-        'formulario_landing',
-        `Lead capturado via landing page principal: ${formData.nome} - ${formData.empresa}`
-      )
+      // Registrar interação se o cliente foi criado com sucesso
+      if (novoCliente && novoCliente[0] && novoCliente[0].cliente_id) {
+        await crmFunctions.registrarInteracao(
+          novoCliente[0].cliente_id,
+          'formulario_landing',
+          `Lead capturado via landing page principal: ${formData.nome} - ${formData.empresa}`
+        )
+      }
 
       setSuccess(true)
       setFormData({
@@ -62,7 +65,7 @@ const LandingPagePrincipal = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center">
-          <img src="/logo-rmacademy.png" alt="RM Academy" className="h-10 w-auto" />
+          <LogoAdaptive className="h-10 w-auto" />
         </div>
       </header>
 

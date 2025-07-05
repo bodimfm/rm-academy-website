@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, Video, Users, CheckCircle, AlertCircle } from 'lucide-react'
 import { crmFunctions } from '../config/supabase'
+import LogoAdaptive from '../components/LogoAdaptive'
 
 const LandingPageWebinar = () => {
   const [formData, setFormData] = useState({
@@ -84,7 +85,7 @@ const LandingPageWebinar = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center">
-          <img src="/logo-rmacademy.png" alt="RM Academy" className="h-10 w-auto" />
+          <LogoAdaptive className="h-10 w-auto" />
         </div>
       </header>
 

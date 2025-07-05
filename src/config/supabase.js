@@ -15,7 +15,7 @@ export const crmFunctions = {
   // Criar novo lead/cliente
   async criarLead(dadosLead) {
     const { data, error } = await supabase
-      .from('clientes')
+      .from('crm.clientes')
       .insert([{
         nome: dadosLead.nome,
         email: dadosLead.email,
@@ -26,7 +26,10 @@ export const crmFunctions = {
       }])
       .select()
     
-    if (error) throw error
+    if (error) {
+      console.error('Erro ao criar lead:', error)
+      throw error
+    }
     return data
   },
 

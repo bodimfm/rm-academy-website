@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -8,6 +8,12 @@
     <meta name="keywords" content="cursos corporativos, treinamento empresarial, IA, gestão de processos, LGPD" />
     <meta name="author" content="RM Academy" />
     <title>RM Academy - Cursos In Company</title>
+    <script>
+      // Detecta e aplica o tema antes do carregamento para evitar flash
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
