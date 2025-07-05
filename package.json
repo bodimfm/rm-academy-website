@@ -2,6 +2,7 @@
   "name": "rm-academy-incompany",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Landing page para treinamentos corporativos da RM Academy",
   "keywords": ["react", "education", "corporate-training", "rm-academy"],
   "author": "Rafael Maciel <contato@rmacademy.com.br>",
