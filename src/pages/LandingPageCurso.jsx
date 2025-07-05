@@ -101,8 +101,15 @@ const LandingPageCurso = ({ cursoId }) => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="absolute top-0 left-0 right-0 z-10 container mx-auto px-4 py-6">
+        <div className="flex items-center">
+          <img src="/logo-rmacademy.png" alt="RM Academy" className="h-10 w-auto" />
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20 pt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
@@ -165,7 +172,7 @@ const LandingPageCurso = ({ cursoId }) => {
                     "Sanções e fiscalização da ANPD"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <ChevronRight className="h-5 w-5 text-indigo-600 mt-0.5" />
+                      <ChevronRight className="h-5 w-5 text-blue-600 mt-0.5" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -236,7 +243,7 @@ const LandingPageCurso = ({ cursoId }) => {
                       value={formData.nome}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Nome completo"
                     />
                   </div>
@@ -248,7 +255,7 @@ const LandingPageCurso = ({ cursoId }) => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="E-mail"
                     />
                   </div>
@@ -260,7 +267,7 @@ const LandingPageCurso = ({ cursoId }) => {
                       value={formData.telefone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="WhatsApp"
                     />
                   </div>
@@ -271,7 +278,7 @@ const LandingPageCurso = ({ cursoId }) => {
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Escritório/Empresa (opcional)"
                     />
                   </div>
@@ -282,7 +289,7 @@ const LandingPageCurso = ({ cursoId }) => {
                         name="turmaId"
                         value={formData.turmaId}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       >
                         <option value="">Selecione uma turma</option>
                         {turmas.map((turma) => (
@@ -297,7 +304,7 @@ const LandingPageCurso = ({ cursoId }) => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-indigo-600 text-white py-4 px-6 rounded-lg font-medium hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Processando...' : 'Fazer inscrição'}
                   </button>

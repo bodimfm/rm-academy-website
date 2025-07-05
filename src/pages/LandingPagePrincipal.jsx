@@ -59,6 +59,13 @@ const LandingPagePrincipal = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6">
+        <div className="flex items-center">
+          <img src="/logo-rmacademy.png" alt="RM Academy" className="h-10 w-auto" />
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -69,7 +76,7 @@ const LandingPagePrincipal = () => {
           >
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
               Transforme seu Escritório com
-              <span className="text-indigo-600"> Tecnologia e IA</span>
+              <span className="text-blue-600"> Tecnologia e IA</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Treinamentos especializados em Direito Digital, Proteção de Dados e Inteligência Artificial 
@@ -126,7 +133,7 @@ const LandingPagePrincipal = () => {
                   value={formData.nome}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Seu nome"
                 />
               </div>
@@ -141,7 +148,7 @@ const LandingPagePrincipal = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -156,7 +163,7 @@ const LandingPagePrincipal = () => {
                   value={formData.telefone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="(11) 99999-9999"
                 />
               </div>
@@ -170,7 +177,7 @@ const LandingPagePrincipal = () => {
                   name="empresa"
                   value={formData.empresa}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Nome do escritório"
                 />
               </div>
@@ -184,7 +191,7 @@ const LandingPagePrincipal = () => {
                   name="cargo"
                   value={formData.cargo}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Sócio, Advogado, etc."
                 />
               </div>
@@ -192,7 +199,7 @@ const LandingPagePrincipal = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Enviando...' : 'Quero saber mais'}
                 <ArrowRight className="h-5 w-5" />
@@ -214,8 +221,8 @@ const LandingPagePrincipal = () => {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6"
             >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="h-8 w-8 text-indigo-600" />
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Conteúdo Prático</h3>
               <p className="text-gray-600">Aprenda com casos reais e aplique imediatamente no seu escritório</p>
@@ -225,8 +232,8 @@ const LandingPagePrincipal = () => {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6"
             >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-indigo-600" />
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Networking</h3>
               <p className="text-gray-600">Conecte-se com outros profissionais inovadores do Direito</p>
@@ -236,8 +243,8 @@ const LandingPagePrincipal = () => {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6"
             >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-8 w-8 text-indigo-600" />
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Certificação</h3>
               <p className="text-gray-600">Receba certificados reconhecidos pelo mercado</p>
@@ -247,8 +254,8 @@ const LandingPagePrincipal = () => {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6"
             >
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-indigo-600" />
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Flexibilidade</h3>
               <p className="text-gray-600">Cursos online e presenciais adaptados à sua rotina</p>

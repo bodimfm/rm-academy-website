@@ -81,6 +81,13 @@ const LandingPageWebinar = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6">
+        <div className="flex items-center">
+          <img src="/logo-rmacademy.png" alt="RM Academy" className="h-10 w-auto" />
+        </div>
+      </header>
+
       {/* Header Section */}
       <section className="container mx-auto px-4 py-8">
         <div className="text-center">
@@ -221,7 +228,7 @@ const LandingPageWebinar = () => {
                     value={formData.nome}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Seu nome completo"
                   />
                 </div>
@@ -233,7 +240,7 @@ const LandingPageWebinar = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Seu melhor e-mail"
                   />
                 </div>
@@ -245,7 +252,7 @@ const LandingPageWebinar = () => {
                     value={formData.telefone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="WhatsApp (com DDD)"
                   />
                 </div>
@@ -256,7 +263,7 @@ const LandingPageWebinar = () => {
                     name="empresa"
                     value={formData.empresa}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Escritório/Empresa (opcional)"
                   />
                 </div>
@@ -291,15 +298,15 @@ const LandingPageWebinar = () => {
             <h3 className="text-2xl font-bold mb-8">Junte-se a mais de 500 advogados inovadores</h3>
             <div className="flex flex-wrap justify-center gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-400">500+</div>
+                <div className="text-3xl font-bold text-blue-400">500+</div>
                 <div className="text-gray-400">Advogados treinados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-400">50+</div>
+                <div className="text-3xl font-bold text-blue-400">50+</div>
                 <div className="text-gray-400">Escritórios atendidos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-400">4.9/5</div>
+                <div className="text-3xl font-bold text-blue-400">4.9/5</div>
                 <div className="text-gray-400">Avaliação média</div>
               </div>
             </div>

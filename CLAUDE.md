@@ -15,7 +15,6 @@ npm run dev          # Start dev server at http://localhost:5173
 # Build & Deploy
 npm run build        # Build for production (outputs to dist/)
 npm run preview      # Preview production build locally
-npm run deploy       # Deploy to GitHub Pages
 
 # Code Quality
 npm run lint         # Run ESLint on JS/JSX files
@@ -28,7 +27,7 @@ npm run lint         # Run ESLint on JS/JSX files
 - **Routing**: React Router DOM v6
 - **Styling**: Tailwind CSS with custom brand colors
 - **Backend**: Supabase (authentication & CRM)
-- **Deployment**: GitHub Pages
+- **Deployment**: Vercel
 
 ### Core Structure
 
@@ -84,7 +83,7 @@ src/
 - Test database operations before deploying
 
 **Deployment checklist:**
-1. Update environment variables in GitHub Secrets
+1. Update environment variables in Vercel dashboard
 2. Run npm run build locally to verify
-3. Commit changes to main branch
-4. Run npm run deploy or let GitHub Actions handle it
+3. Push changes to main branch
+4. Vercel will automatically deploy
