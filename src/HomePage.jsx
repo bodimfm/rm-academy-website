@@ -83,6 +83,7 @@ const onlineCourses = [
 const courses = [
   {
     id: "ai-pratica",
+    path: "/curso/ia-pratica-empresas",
     category: "Inteligência Artificial",
     title: "IA PRÁTICA",
     subtitle: "Transforme desafios em ganhos mensuráveis",
@@ -99,6 +100,7 @@ const courses = [
   },
   {
     id: "risco-si",
+    path: "/curso/risco-si",
     category: "Segurança da Informação",
     title: "Gestão de Riscos em SI",
     subtitle: "Metodologias para reduzir riscos cibernéticos",
@@ -115,6 +117,7 @@ const courses = [
   },
   {
     id: "processos",
+    path: "/curso/processos",
     category: "Gestão Empresarial",
     title: "Gerenciamento de Processos",
     subtitle: "Estruture e otimize processos críticos",
@@ -131,6 +134,7 @@ const courses = [
   },
   {
     id: "controller",
+    path: "/curso/controller",
     category: "Finanças",
     title: "Controller Financeiro",
     subtitle: "Controle gerencial moderno e data-driven",
@@ -191,8 +195,8 @@ export default function HomePage() {
     setCurrentSlide((prev) => (prev - 1 + courses.length) % courses.length);
   };
 
-  const handleCourseClick = (courseId) => {
-    navigate(`/curso/${courseId}`);
+  const handleCourseClick = (course) => {
+    navigate(course.path || `/curso/${course.id}`);
   };
 
   return (
@@ -344,8 +348,8 @@ export default function HomePage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                          <Button 
-                            onClick={() => handleCourseClick(courses[currentSlide].id)}
+                          <Button
+                            onClick={() => handleCourseClick(courses[currentSlide])}
                             className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                             size="lg"
                           >
@@ -557,9 +561,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card 
+                <Card
                   className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group"
-                  onClick={() => handleCourseClick(course.id)}
+                  onClick={() => handleCourseClick(course)}
                 >
                   <div className={`h-2 bg-gradient-to-r ${course.color}`}></div>
                   <CardHeader>
