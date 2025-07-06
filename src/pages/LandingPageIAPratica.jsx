@@ -85,37 +85,40 @@ const LandingPageIAPratica = () => {
 
   const formatos = [
     {
-      tipo: "Presencial",
+      tipo: "Treinamento Presencial",
       icone: <Users className="w-8 h-8" />,
-      preco: "R$ 1.497",
+      preco: "Sob consulta",
       features: [
-        "8h de imersão total",
-        "Networking com outros executivos",
-        "Coffee breaks inclusos",
-        "Material impresso"
+        "Duração personalizada (4h a 16h)",
+        "Na sede da sua empresa",
+        "Até 30 participantes",
+        "Material customizado",
+        "Coffee breaks inclusos"
       ],
       destaque: true
     },
     {
-      tipo: "Online ao Vivo",
+      tipo: "Workshop Online",
       icone: <Video className="w-8 h-8" />,
-      preco: "R$ 997",
+      preco: "Sob consulta",
       features: [
-        "Participação em tempo real",
-        "Gravação por 30 dias",
-        "Interação via chat",
-        "Material digital"
+        "Sessões ao vivo interativas",
+        "Gravação disponível",
+        "Até 50 participantes",
+        "Material digital personalizado",
+        "Suporte pós-treinamento"
       ]
     },
     {
-      tipo: "Gravado",
+      tipo: "Programa Completo",
       icone: <Monitor className="w-8 h-8" />,
-      preco: "R$ 697",
+      preco: "Sob consulta",
       features: [
-        "Acesso por 6 meses",
-        "Assista no seu ritmo",
-        "Suporte por email",
-        "Material digital"
+        "Múltiplas sessões",
+        "Mentoria incluída",
+        "Projetos práticos",
+        "Certificação corporativa",
+        "ROI garantido"
       ]
     }
   ]
@@ -196,21 +199,27 @@ const LandingPageIAPratica = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-4xl mx-auto"
         >
+          <div className="inline-flex items-center bg-purple-100 dark:bg-purple-900 rounded-full px-6 py-3 mb-6">
+            <Users className="w-5 h-5 text-purple-600 dark:text-purple-400 mr-2" />
+            <span className="text-purple-800 dark:text-purple-200 font-semibold">
+              Treinamento Corporativo Personalizado
+            </span>
+          </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Aplique Inteligência Artificial de{' '}
+            IA Prática para{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Verdade em 1 Dia
+              Sua Empresa
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Curso 100% prático para profissionais que não têm tempo a perder.
+            Treinamento in-company customizado para as necessidades específicas da sua equipe
           </p>
           <Button 
             size="lg"
             onClick={scrollToForm}
             className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-lg px-8 py-6"
           >
-            Garanta sua vaga
+            Solicitar Orçamento
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </motion.div>
@@ -232,11 +241,11 @@ const LandingPageIAPratica = () => {
                 </span>
               </div>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Você ainda faz manualmente tarefas que poderiam ser automatizadas?
+                Sua empresa ainda depende de processos manuais e repetitivos?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Enquanto você perde tempo com processos repetitivos, seus concorrentes 
-                já estão usando IA para tomar decisões mais rápidas e precisas.
+                Capacite sua equipe com as ferramentas de IA mais avançadas do mercado,
+                customizadas para os desafios específicos do seu negócio.
               </p>
             </motion.div>
           </div>
@@ -252,7 +261,7 @@ const LandingPageIAPratica = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              O que você ganha aplicando IA
+              Benefícios para sua empresa
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -317,10 +326,10 @@ const LandingPageIAPratica = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              O que você vai aprender
+              Conteúdo do treinamento
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              6 módulos práticos que transformam teoria em resultados
+              6 módulos customizáveis para as necessidades da sua equipe
             </p>
           </motion.div>
           
@@ -359,7 +368,7 @@ const LandingPageIAPratica = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Escolha o formato ideal para você
+              Formatos de treinamento disponíveis
             </h2>
           </motion.div>
 
@@ -407,7 +416,7 @@ const LandingPageIAPratica = () => {
                         scrollToForm()
                       }}
                     >
-                      Escolher {formato.tipo}
+                      Solicitar Proposta
                     </Button>
                   </CardContent>
                 </Card>
@@ -490,22 +499,22 @@ const LandingPageIAPratica = () => {
                 <span className="font-semibold">Versão Premium</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Mentoria Individual Guiada
+                Consultoria Estratégica Incluída
               </h2>
               <p className="text-xl mb-8 text-white/90">
-                Além do curso completo, tenha 3 sessões individuais de 1h 
-                para implementar IA no seu negócio específico
+                Adicione sessões de consultoria para mapear oportunidades 
+                específicas de IA no seu negócio e criar um roadmap personalizado
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div className="text-3xl font-bold">
-                  De <s className="text-white/60">R$ 3.997</s> por R$ 2.497
+                <div className="text-2xl">
+                  Transforme sua empresa com IA de forma estratégica e segura
                 </div>
                 <Button 
                   size="lg"
                   className="bg-white text-purple-600 hover:bg-gray-100"
                   onClick={scrollToForm}
                 >
-                  Quero versão Premium
+                  Incluir Consultoria
                   <ArrowRight className="ml-2" />
                 </Button>
               </div>
@@ -629,10 +638,10 @@ const LandingPageIAPratica = () => {
           >
             <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
               <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
-                Garanta sua vaga agora
+                Solicite uma proposta personalizada
               </h2>
               <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-                Vagas limitadas para garantir qualidade e atenção personalizada
+                Vamos criar um treinamento sob medida para sua equipe
               </p>
 
               {success ? (
@@ -643,10 +652,10 @@ const LandingPageIAPratica = () => {
                 >
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-green-800 dark:text-green-200 mb-2">
-                    Inscrição realizada com sucesso!
+                    Solicitação enviada com sucesso!
                   </h3>
                   <p className="text-green-700 dark:text-green-300">
-                    Em breve você receberá um e-mail com todas as informações.
+                    Nossa equipe entrará em contato em até 24 horas com uma proposta personalizada.
                   </p>
                 </motion.div>
               ) : (
@@ -733,10 +742,10 @@ const LandingPageIAPratica = () => {
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                       >
-                        <option value="presencial">Presencial</option>
-                        <option value="online_ao_vivo">Online ao Vivo</option>
-                        <option value="gravado">Gravado</option>
-                        <option value="premium">Premium com Mentoria</option>
+                        <option value="treinamento_presencial">Treinamento Presencial</option>
+                        <option value="workshop_online">Workshop Online</option>
+                        <option value="programa_completo">Programa Completo</option>
+                        <option value="consultoria">Com Consultoria Estratégica</option>
                       </select>
                     </div>
                   </div>
@@ -752,7 +761,7 @@ const LandingPageIAPratica = () => {
                     disabled={loading}
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white py-4 text-lg font-semibold"
                   >
-                    {loading ? 'Enviando...' : 'Confirmar Inscrição'}
+                    {loading ? 'Enviando...' : 'Solicitar Proposta'}
                   </Button>
 
                   <div className="text-center text-sm text-gray-600 dark:text-gray-400">
@@ -773,18 +782,18 @@ const LandingPageIAPratica = () => {
             initial={{ opacity: 0, y: 20 }}
           >
             <h2 className="text-4xl font-bold mb-4">
-              Pronto para colocar a IA para trabalhar por você?
+              Transforme sua empresa com IA de forma estratégica
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Junte-se a centenas de executivos que já transformaram 
-              suas rotinas com inteligência artificial
+              Capacite sua equipe com um treinamento personalizado 
+              que gera resultados reais e mensuráveis
             </p>
             <Button 
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6"
               onClick={scrollToForm}
             >
-              Inscrever agora
+              Solicitar proposta
               <ArrowRight className="ml-2" />
             </Button>
             <div className="mt-8 flex justify-center items-center space-x-6">
