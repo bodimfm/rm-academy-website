@@ -33,27 +33,35 @@ npm run lint         # Run ESLint on JS/JSX files
 
 ```
 src/
-├── pages/                         # Landing page components
-│   ├── LandingPagePrincipal.jsx  # Main lead capture (/leads)
-│   ├── LandingPageCurso.jsx      # Course-specific (/curso/:cursoId)
-│   └── LandingPageWebinar.jsx    # Webinar registration (/webinar)
+├── pages/                                    # Landing page components
+│   ├── LandingPagePrincipal.jsx             # Main lead capture (/leads)
+│   ├── LandingPageCurso.jsx                 # Course-specific (/curso/:cursoId)
+│   ├── LandingPageWebinar.jsx               # Webinar registration (/webinar)
+│   ├── LandingPageIAPratica.jsx             # Corporate IA training (/curso/ia-pratica-empresas)
+│   └── LandingPageIAPraticaProfissionais.jsx # Individual IA course (/curso/ia-pratica)
+├── components/
+│   └── LogoAdaptive.jsx                     # Auto-switching logo based on theme
 ├── config/
-│   └── supabase.js               # Supabase client & CRM functions
-└── App.jsx                       # Routes configuration
+│   └── supabase.js                          # Supabase client & CRM functions
+├── HomePage.jsx                             # Main homepage with course carousels
+└── App.jsx                                  # Routes configuration
 ```
 
 ### Key Architectural Decisions
 
-1. **Multi-Page Landing System**: Three distinct landing page types sharing common components but with different conversion goals:
+1. **Multi-Page Landing System**: Five distinct landing page types sharing common components but with different conversion goals:
    - Principal: General lead capture with segmented CTAs
    - Curso: Course-specific enrollment with dynamic content
    - Webinar: Event registration with limited spots
+   - IA Prática Empresas: Corporate training proposals (customized, on-demand)
+   - IA Prática Profissionais: Individual course sales (fixed dates, online purchase)
 
-2. **Supabase CRM Integration**: All forms interact with Supabase tables:
-   - `leads`: Stores lead information
-   - `cursos`: Course catalog
-   - `inscricoes`: Course enrollments
-   - `interacoes`: User interaction tracking
+2. **Supabase CRM Integration**: All forms interact with Supabase tables (schema: crm):
+   - `crm.clientes`: Stores lead/client information
+   - `crm.cursos`: Course catalog
+   - `crm.turmas`: Course sessions/batches
+   - `crm.inscricoes_curso`: Course enrollments
+   - `crm.interacoes`: User interaction tracking
 
 3. **Environment Configuration**: Supabase credentials via environment variables:
    ```
@@ -68,6 +76,8 @@ src/
 3. **State Management**: Local state with useState hooks
 4. **API Calls**: Abstracted in config/supabase.js
 5. **Styling**: Utility-first with Tailwind, custom colors in tailwind.config.js
+6. **Dark Mode**: Automatic theme detection with LogoAdaptive component
+7. **Animations**: Framer Motion for smooth transitions and interactions
 
 ### Common Tasks
 
@@ -87,3 +97,37 @@ src/
 2. Run npm run build locally to verify
 3. Push changes to main branch
 4. Vercel will automatically deploy
+
+## Recent Updates (January 2025)
+
+### Visual Identity Changes
+- Implemented automatic dark/light theme switching based on system preferences
+- Created LogoAdaptive component that switches between two logo versions:
+  - Light theme: `/logormacademy-estiloprivacy.png`
+  - Dark theme: `/novalogormacademy-fundoescuro.png`
+- Updated navigation bar height from h-16 to h-20 for better logo visibility
+
+### New Landing Pages
+1. **IA Prática para Empresas** (`/curso/ia-pratica-empresas`):
+   - Corporate training page with customized proposals
+   - "Sob consulta" pricing model
+   - Focus on team training and strategic consulting
+   
+2. **IA Prática para Profissionais** (`/curso/ia-pratica`):
+   - Individual course sales with fixed pricing
+   - Two formats: Presencial (R$ 997) and Online (R$ 697)
+   - Detailed 3-part curriculum covering fundamentals, practice, and hands-on workshop
+   - Specific dates and limited seats
+
+### Homepage Enhancements
+- Added online courses section above in-company courses
+- Implemented modern footer with newsletter signup and social links
+- Fixed Supabase integration to use correct schema (crm.clientes)
+- Added student area link pointing to https://rmacademy.io/wp-login.php
+
+### Key Features Implemented
+- Form submissions properly integrated with Supabase CRM
+- Responsive design with Tailwind CSS dark mode support
+- Framer Motion animations for better UX
+- Comprehensive error handling and success feedback
+- SEO-friendly URL structure
