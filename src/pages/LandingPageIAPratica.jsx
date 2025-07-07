@@ -10,12 +10,12 @@ export default function LandingPageIAPratica() {
     document.documentElement.lang = 'pt-BR'
     document.title = 'Curso de Intelig\u00eancia Artificial In Company | RM Academy'
     const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', 'Capacite sua equipe a aplicar IA nos processos de neg\u00f3cio em 1 dia de imers\u00e3o hands-on.')
+    if (meta) meta.setAttribute('content', 'Do diagnóstico ao piloto em 10 horas. Caso real: ROI de 300% em 6 meses.')
   }, [])
 
   return (
     <div className="text-gray-900">
-      <Hero />
+      <Hero subtitle="Do diagnóstico ao piloto em 10 horas" />
       <Benefits />
       <Program />
       <Testimonials />

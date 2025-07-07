@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "RM Academy — Formação Corporativa em IA, Processos e Governança",
+    "subtitle": "Treinamentos práticos, éticos e com ROI comprovado",
+    "description": "Oferecemos programas personalizados que combinam Inteligência Artificial, Gestão de Processos, Segurança da Informação e Finanças, garantindo resultados mensuráveis e compliance total à LGPD.",
+    "primaryCta": "Solicitar proposta agora",
+    "secondaryCta": "Ver programa completo"
+  },
+  "benefits": {
+    "items": [
+      { "icon": "Lightbulb", "title": "Hands-on imediato" },
+      { "icon": "TrendingUp", "title": "ROI mensurável" },
+      { "icon": "ShieldCheck", "title": "Governança & LGPD" }
+    ]
+  },
+  "program": {
+    "modules": [
+      { "title": "Fundamentos de IA", "items": ["Conceitos essenciais sem tecnicidades"] },
+      { "title": "Mapeamento de Oportunidades", "items": ["Identifique onde aplicar IA no seu negócio"] },
+      { "title": "Prompts Eficazes", "items": ["Domine a arte de conversar com IA"] },
+      { "title": "Prototipagem Low-Code", "items": ["Crie soluções sem programar"] },
+      { "title": "ROI & Governança LGPD", "items": ["Meça resultados e garanta conformidade"] },
+      { "title": "Plano de Ação", "items": ["Roteiro prático de implementação"] },
+      { "title": "Mentoria Exclusiva", "items": ["Sessões individuais para seu time"] }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "João Silva",
+      "role": "COO, Empresa X",
+      "quote": "Reduzimos 27%..."
+    },
+    {
+      "name": "Mariana Costa",
+      "role": "Head de Inovação, Grupo Y",
+      "quote": "O roteiro Sprint-0 nos deu..."
+    }
+  ],
+  "ctaFinal": {
+    "title": "Pronto para impulsionar sua empresa com IA?",
+    "button": "Solicitar proposta agora"
+  }
+}

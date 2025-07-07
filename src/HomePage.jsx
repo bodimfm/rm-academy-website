@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useStats } from "./stores/stats";
 import LogoAdaptive from "./components/LogoAdaptive";
 import { Card, CardHeader, CardContent, CardFooter } from "./components/ui/card";
 import { Button } from "./components/ui/button";
@@ -14,11 +15,11 @@ import {
 const onlineCourses = [
   {
     id: "cyber-crimes",
-    title: "Aprenda a identificar autores de cibercrimes",
-    description: "Estratégias e procedimentos práticos para identificação de autores de cibercrimes",
+    title: "Rastreando Cibercriminosos na Prática",
+    description: "Economize até 30 h de investigação usando técnicas de OSINT e IA",
     instructor: "Rafael Maciel",
     price: "R$ 250,00",
-    duration: "7 Aulas",
+    duration: "7 aulas · 4 h totais",
     category: "Cibersegurança",
     color: "from-red-600 to-orange-600",
     link: "https://rmacademy.io/courses/aprenda-a-identificar-autores-de-cibercrimes/"
@@ -50,7 +51,7 @@ const onlineCourses = [
     title: "Consentimento: Cuidados e Riscos",
     description: "Como obter um consentimento válido em proteção de dados pessoais",
     instructor: "Rafael Maciel",
-    price: "R$ 19,00",
+    price: "R$ 19,00 (à vista ou 2× R$ 9,50 sem juros)",
     duration: "1 Aula",
     category: "Proteção de Dados",
     color: "from-indigo-600 to-blue-600",
@@ -96,7 +97,7 @@ const courses = [
     price: "Sob consulta",
     image: "/api/placeholder/400/300",
     color: "from-blue-600 to-blue-800",
-    highlights: ["Aplicação prática", "ROI mensurável", "LGPD compliant"]
+    highlights: ["Aplicação prática", "ROI mensurável", "LGPD compliant", "Mentoria pós-treinamento para garantir aplicação"]
   },
   {
     id: "risco-si",
@@ -113,7 +114,7 @@ const courses = [
     price: "Sob consulta",
     image: "/api/placeholder/400/300",
     color: "from-blue-600 to-indigo-700",
-    highlights: ["ISO 27005", "NIST Framework", "Cases reais"]
+    highlights: ["ISO 27005", "NIST Framework", "Cases reais", "Mentoria pós-treinamento para garantir aplicação"]
   },
   {
     id: "processos",
@@ -130,7 +131,7 @@ const courses = [
     price: "Sob consulta",
     image: "/api/placeholder/400/300",
     color: "from-purple-600 to-pink-700",
-    highlights: ["BPMN 2.0", "KPIs estratégicos", "Automação"]
+    highlights: ["BPMN 2.0", "KPIs estratégicos", "Automação", "Mentoria pós-treinamento para garantir aplicação"]
   },
   {
     id: "controller",
@@ -147,15 +148,15 @@ const courses = [
     price: "Sob consulta",
     image: "/api/placeholder/400/300",
     color: "from-amber-600 to-orange-700",
-    highlights: ["Dashboards", "IA aplicada", "Forecast"]
+    highlights: ["Dashboards", "IA aplicada", "Forecast", "Mentoria pós-treinamento para garantir aplicação"]
   }
 ];
 
 const testimonials = [
   {
     name: "Ana Silva",
-    role: "Diretora de TI",
-    company: "Tech Corp",
+    role: "Diretora de TI — Tech Corp (Indústria 4.0)",
+    company: "",
     text: "O curso de IA Prática transformou completamente nossa abordagem de automação. ROI de 300% em 6 meses.",
     rating: 5
   },
@@ -179,6 +180,7 @@ export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const stats = useStats();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -291,14 +293,13 @@ export default function HomePage() {
               className="text-center mb-12"
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                Transforme sua Equipe com
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                  Treinamentos Corporativos Premium
-                </span>
+                RM Academy — Formação Corporativa em IA, Processos e Governança
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Cursos especializados em IA, Gestão de Processos, Segurança da Informação e Finanças. 
-                Metodologia prática com resultados mensuráveis.
+                Treinamentos práticos, éticos e com ROI comprovado
+              </p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Oferecemos programas personalizados que combinam Inteligência Artificial, Gestão de Processos, Segurança da Informação e Finanças, garantindo resultados mensuráveis e compliance total à LGPD.
               </p>
             </motion.div>
 
@@ -356,13 +357,21 @@ export default function HomePage() {
                             Saiba Mais
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
-                          <Button 
-                            variant="outline" 
+                          <Button
+                            variant="outline"
                             className="border-white/30 text-white hover:bg-white/10"
                             size="lg"
                             onClick={() => navigate('/leads')}
                           >
                             Solicitar Proposta
+                          </Button>
+                          <Button
+                            variant="secondary"
+                            className="bg-white/20 hover:bg-white/30"
+                            size="lg"
+                            onClick={() => window.open('/programa.pdf', '_blank')}
+                          >
+                            Baixar programa completo (PDF)
                           </Button>
                         </div>
                       </div>
@@ -423,7 +432,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">Mais de {stats.trained}</div>
               <div className="text-gray-600 dark:text-gray-300">Profissionais Treinados</div>
             </motion.div>
             <motion.div
@@ -432,8 +441,8 @@ export default function HomePage() {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
-              <div className="text-gray-600 dark:text-gray-300">Taxa de Satisfação</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.satisfaction} %</div>
+              <div className="text-gray-600 dark:text-gray-300">de satisfação</div>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
@@ -441,7 +450,7 @@ export default function HomePage() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-blue-600 mb-2">25</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.maxPerClass}</div>
               <div className="text-gray-600 dark:text-gray-300">Máximo por Turma</div>
             </motion.div>
             <motion.div
@@ -450,7 +459,7 @@ export default function HomePage() {
               transition={{ delay: 0.3 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-blue-600 mb-2">4</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.expertiseAreas}</div>
               <div className="text-gray-600 dark:text-gray-300">Áreas de Expertise</div>
             </motion.div>
           </div>
@@ -631,11 +640,15 @@ export default function HomePage() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 italic">"{testimonial.text}"</p>
+                    <blockquote className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                      “{testimonial.text}”
+                    </blockquote>
                     <div className="border-t pt-4">
                       <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-                      <p className="text-sm text-gray-500">{testimonial.company}</p>
+                      {testimonial.company && (
+                        <p className="text-sm text-gray-500">{testimonial.company}</p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -656,7 +669,7 @@ export default function HomePage() {
               Pronto para transformar sua equipe?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Entre em contato e descubra como nossos treinamentos podem gerar resultados reais para sua empresa
+              Solicite um diagnóstico gratuito e descubra em 15 minutos como treinar sua equipe para gerar resultados mensuráveis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -691,7 +704,7 @@ export default function HomePage() {
             <div className="lg:col-span-2">
               <LogoAdaptive className="h-12 w-auto mb-6" />
               <p className="text-gray-400 mb-6 max-w-sm">
-                Transformando profissionais e empresas através de conhecimento especializado em tecnologia, privacidade e gestão.
+                Capacitamos profissionais e organizações com metodologias hands-on em tecnologia, privacidade e gestão, alinhadas aos mais altos padrões éticos.
               </p>
               {/* Social Media Icons */}
               <div className="flex space-x-4">

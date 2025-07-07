@@ -2,7 +2,7 @@ import { content } from '../../content'
 import { Button } from '../ui/button'
 import LeadForm from './LeadForm'
 
-export default function Hero() {
+export default function Hero({ title, subtitle }) {
   return (
     <section
       className="py-16 bg-white text-gray-900"
@@ -16,8 +16,8 @@ export default function Hero() {
       <div className="bg-white/80 backdrop-brightness-95">
         <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center px-4 py-12">
           <div>
-            <h1 className="text-4xl font-bold mb-4">{content.hero.title}</h1>
-            <p className="mb-6 text-lg">{content.hero.subtitle}</p>
+            <h1 className="text-4xl font-bold mb-4">{title || content.hero.title}</h1>
+            <p className="mb-6 text-lg">{subtitle || content.hero.subtitle}</p>
             <div className="flex gap-4 mb-8">
               <Button className="bg-amber-500 text-white hover:bg-amber-600">
                 {content.hero.primaryCta}
