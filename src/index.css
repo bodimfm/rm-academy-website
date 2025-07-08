@@ -20,7 +20,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-rm-blue-900 to-rm-cyan-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-navy to-brand-accent bg-clip-text text-transparent;
   }
   
   .card-hover {
