@@ -116,38 +116,55 @@ const courses = [
     highlights: ["ISO 27005", "NIST Framework", "Cases reais"]
   },
   {
-    id: "processos",
-    path: "/curso/processos",
+    id: "governanca-processos",
+    path: "/curso/governanca-processos",
     category: "Gestão Empresarial",
-    title: "Gerenciamento de Processos",
-    subtitle: "Estruture e otimize processos críticos",
+    title: "Governança e Controle de Processos Empresariais",
+    subtitle: "Melhoria contínua, eficiência operacional e conformidade organizacional",
     instructor: {
       name: "Gustavo Brasil",
       title: "Mestre em Administração",
       avatar: "GB"
     },
-    duration: "8h aula + 2h mentoria",
-    price: "Sob consulta",
+    duration: "16h aula + 2h tutoria",
+    price: "R$ 5.000,00",
     image: "/api/placeholder/400/300",
     color: "from-purple-600 to-pink-700",
-    highlights: ["BPMN 2.0", "KPIs estratégicos", "Automação"]
+    highlights: ["Governança corporativa", "Gestão de riscos", "Melhoria contínua"]
   },
   {
-    id: "controller",
-    path: "/curso/controller",
+    id: "gestao-pratica",
+    path: "/curso/gestao-pratica",
+    category: "Gestão Empresarial",
+    title: "Gestão na Prática para Profissionais Liberais",
+    subtitle: "Base sólida para organizar, planejar e expandir seu negócio",
+    instructor: {
+      name: "Gustavo Brasil",
+      title: "Mestre em Administração",
+      avatar: "GB"
+    },
+    duration: "12h aula + 2h tutoria",
+    price: "R$ 3.500,00",
+    image: "/api/placeholder/400/300",
+    color: "from-green-600 to-teal-700",
+    highlights: ["Organização financeira", "Marketing básico", "Gestão do tempo"]
+  },
+  {
+    id: "kpis-financeiros",
+    path: "/curso/kpis-financeiros",
     category: "Finanças",
-    title: "Controller Financeiro",
-    subtitle: "Controle gerencial moderno e data-driven",
+    title: "KPIs Financeiros e Controladoria para gestão de resultados",
+    subtitle: "Tome decisões estratégicas com indicadores financeiros e controladoria",
     instructor: {
       name: "Gustavo Brasil",
       title: "Consultor Financeiro",
       avatar: "GB"
     },
-    duration: "8h aula + 2h mentoria",
-    price: "Sob consulta",
+    duration: "12h aula + 2h tutoria",
+    price: "R$ 5.000,00",
     image: "/api/placeholder/400/300",
     color: "from-amber-600 to-orange-700",
-    highlights: ["Dashboards", "IA aplicada", "Forecast"]
+    highlights: ["KPIs financeiros", "Dashboards", "Análise de dados"]
   }
 ];
 

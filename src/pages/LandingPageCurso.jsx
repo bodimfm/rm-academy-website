@@ -1,10 +1,125 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, MapPin, Users, Star, ChevronRight } from 'lucide-react'
+import { useParams } from 'react-router-dom'
 import { crmFunctions } from '../config/supabase'
 import LogoAdaptive from '../components/LogoAdaptive'
 
-const LandingPageCurso = ({ cursoId }) => {
+const LandingPageCurso = () => {
+  const { cursoId } = useParams()
+  
+  // Mapeamento dos cursos
+  const cursosData = {
+    'governanca-processos': {
+      titulo: "Governança e Controle de Processos Empresariais",
+      descricao: "Capacite-se para implementar práticas eficazes de governança e controle de processos, visando a melhoria contínua e eficiência operacional.",
+      duracao_horas: 16,
+      preco: 5000,
+      formato: "Presencial ou Online",
+      instrutor: "Gustavo Brasil",
+      conteudo: [
+        "Fundamentos da governança corporativa aplicada a processos",
+        "Mapeamento e documentação de processos organizacionais",
+        "Ferramentas e técnicas de controle de performance",
+        "Implementação de sistemas de governança",
+        "Gestão de riscos e melhoria contínua",
+        "Integração com estratégias empresariais",
+        "Softwares e metodologias para automatização"
+      ],
+      idealPara: [
+        "Gestores e profissionais empresariais",
+        "Analistas de processos",
+        "Consultores organizacionais"
+      ],
+      preRequisitos: [
+        "Experiência em gestão empresarial",
+        "Conhecimento básico de processos",
+        "Interesse em melhoria contínua"
+      ]
+    },
+    'gestao-pratica': {
+      titulo: "Gestão na Prática para Profissionais Liberais",
+      descricao: "Base sólida para organizar, planejar, controlar e expandir seu negócio de forma eficiente e sustentável.",
+      duracao_horas: 12,
+      preco: 3500,
+      formato: "Presencial ou Online",
+      instrutor: "Gustavo Brasil",
+      conteudo: [
+        "Princípios fundamentais da gestão de pequenos negócios",
+        "Organização financeira e precificação de serviços",
+        "Fluxo de caixa e controle de despesas",
+        "Plano de ação estratégico alinhado aos objetivos",
+        "Marketing básico e posicionamento de marca",
+        "Gestão do tempo e produtividade",
+        "Obrigações legais e tributárias essenciais"
+      ],
+      idealPara: [
+        "Profissionais liberais iniciantes",
+        "Autônomos em crescimento",
+        "Pequenos empresários"
+      ],
+      preRequisitos: [
+        "Atuação como profissional liberal",
+        "Vontade de organizar o negócio",
+        "Comprometimento com a implementação"
+      ]
+    },
+    'kpis-financeiros': {
+      titulo: "KPIs Financeiros e Controladoria para gestão de resultados",
+      descricao: "Utilize conceitos e ferramentas de controladoria e indicadores financeiros para decisões estratégicas e gestão eficiente.",
+      duracao_horas: 12,
+      preco: 5000,
+      formato: "Presencial ou Online",
+      instrutor: "Gustavo Brasil",
+      conteudo: [
+        "O papel da controladoria na gestão financeira",
+        "Principais KPIs financeiros: margem, ponto de equilíbrio, ticket médio",
+        "Ferramentas de controle gerencial e dashboards",
+        "Análise crítica de dados financeiros",
+        "Planejamento e acompanhamento de metas",
+        "Estruturação financeira do negócio",
+        "Tomada de decisão baseada em dados"
+      ],
+      idealPara: [
+        "Gestores financeiros",
+        "Controllers e analistas",
+        "Empresários e executivos"
+      ],
+      preRequisitos: [
+        "Conhecimento básico de finanças",
+        "Experiência com gestão empresarial",
+        "Interesse em análise de dados"
+      ]
+    },
+    // Manter cursos existentes
+    'risco-si': {
+      titulo: "Gestão de Riscos em Segurança da Informação",
+      descricao: "Metodologias para identificar, avaliar e mitigar riscos cibernéticos na sua empresa.",
+      duracao_horas: 8,
+      preco: 0,
+      formato: "In-Company",
+      instrutor: "Rafael Maciel",
+      conteudo: [
+        "ISO 27005 e framework NIST",
+        "Identificação e classificação de ativos",
+        "Análise de vulnerabilidades e ameaças",
+        "Matriz de riscos e planos de ação",
+        "Gestão de incidentes de segurança",
+        "Indicadores e monitoramento contínuo"
+      ],
+      idealPara: [
+        "Gestores de TI e segurança",
+        "Analistas de riscos",
+        "Profissionais de compliance"
+      ],
+      preRequisitos: [
+        "Conhecimento básico de TI",
+        "Noções de segurança da informação",
+        "Visão estratégica do negócio"
+      ]
+    }
+  }
+  
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -91,13 +206,16 @@ const LandingPageCurso = ({ cursoId }) => {
     })
   }
 
-  // Dados mockados para exemplo - substitua com dados reais do Supabase
-  const cursoExemplo = curso || {
-    titulo: "LGPD e Proteção de Dados para Advogados",
-    descricao: "Domine a Lei Geral de Proteção de Dados e transforme seu escritório em referência em compliance digital.",
-    duracao_horas: 40,
-    preco: 1997,
-    formato: "Online ao vivo"
+  // Usar dados do curso baseado no ID da URL
+  const cursoAtual = cursosData[cursoId] || curso || {
+    titulo: "Curso não encontrado",
+    descricao: "O curso solicitado não foi encontrado. Por favor, verifique o link.",
+    duracao_horas: 0,
+    preco: 0,
+    formato: "N/A",
+    conteudo: [],
+    idealPara: [],
+    preRequisitos: []
   }
 
   return (
@@ -118,7 +236,7 @@ const LandingPageCurso = ({ cursoId }) => {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold mb-6"
             >
-              {cursoExemplo.titulo}
+              {cursoAtual.titulo}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -126,7 +244,7 @@ const LandingPageCurso = ({ cursoId }) => {
               transition={{ delay: 0.2 }}
               className="text-xl mb-8 opacity-90"
             >
-              {cursoExemplo.descricao}
+              {cursoAtual.descricao}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -136,16 +254,22 @@ const LandingPageCurso = ({ cursoId }) => {
             >
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
-                <span>{cursoExemplo.duracao_horas} horas</span>
+                <span>{cursoAtual.duracao_horas} horas</span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5" />
-                <span>{cursoExemplo.formato}</span>
+                <span>{cursoAtual.formato}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="h-5 w-5 fill-current" />
                 <span>4.9/5 (127 avaliações)</span>
               </div>
+              {cursoAtual.instrutor && (
+                <div className="flex items-center gap-2">
+                  <Users className="h-5 w-5" />
+                  <span>Instrutor: {cursoAtual.instrutor}</span>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
@@ -164,14 +288,7 @@ const LandingPageCurso = ({ cursoId }) => {
               >
                 <h2 className="text-2xl font-bold mb-6">O que você vai aprender</h2>
                 <div className="space-y-3">
-                  {[
-                    "Fundamentos da LGPD e princípios de proteção de dados",
-                    "Como implementar um programa de compliance no escritório",
-                    "Elaboração de políticas de privacidade e termos de uso",
-                    "Gestão de incidentes e vazamento de dados",
-                    "DPO: quando indicar e como atuar",
-                    "Sanções e fiscalização da ANPD"
-                  ].map((item, index) => (
+                  {(cursoAtual.conteudo || []).map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <ChevronRight className="h-5 w-5 text-blue-600 mt-0.5" />
                       <span className="text-gray-700">{item}</span>
@@ -191,17 +308,17 @@ const LandingPageCurso = ({ cursoId }) => {
                   <div>
                     <h3 className="font-semibold mb-2">Ideal para:</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Advogados que querem se especializar</li>
-                      <li>• Escritórios em busca de diferenciação</li>
-                      <li>• Profissionais de compliance</li>
+                      {(cursoAtual.idealPara || []).map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Pré-requisitos:</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Conhecimento básico de Direito</li>
-                      <li>• Interesse em tecnologia</li>
-                      <li>• Vontade de inovar</li>
+                      {(cursoAtual.preRequisitos || []).map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -217,9 +334,14 @@ const LandingPageCurso = ({ cursoId }) => {
               >
                 <div className="text-center mb-6">
                   <p className="text-3xl font-bold text-gray-900">
-                    R$ {cursoExemplo.preco?.toLocaleString('pt-BR')}
+                    {cursoAtual.preco > 0 
+                      ? `R$ ${cursoAtual.preco?.toLocaleString('pt-BR')}`
+                      : 'Sob consulta'
+                    }
                   </p>
-                  <p className="text-gray-600">ou 12x sem juros</p>
+                  {cursoAtual.preco > 0 && (
+                    <p className="text-gray-600">ou 12x sem juros</p>
+                  )}
                 </div>
 
                 <h3 className="text-xl font-bold mb-4">Garanta sua vaga</h3>
